@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Ghar E Garage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h3>Welcome to Ghar E Garage </h3>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="mailto:contact@egarage.co.in">contact@egarage.co.in </a> 
+            <a href="#">999-999-999</a>
+            
+        </nav>
+    </header>
+    <section style="align-items: center;">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Login</button>
+        </form>
+        <p id="message"></p>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Ghar E Garage. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        const form = document.getElementById('loginForm');
+        const message = document.getElementById('message');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = form.username.value;
+            const password = form.password.value;
+            if (username === 'admin' && password === 'password123') {
+               alert("login successfull")
+                window.location.href = 'dashboard.html';
+            } else {
+              alert("invalid username and password, try again");
+            }
+        });
+    </script>
+</body>
+</html>

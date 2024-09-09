@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book a Service - Ghar E Garage</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h3>Ghar E Garage</h3>
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="booking.html">Booking</a>
+        <a href="logout.html">Logout</a>
+        <a href="mailto:contact@egarage.co.in">contact@egarage.co.in </a>
+        <a href="#">999-999-999</a>
+      </nav>
+    </header>
+    <section class="booking-section">
+      <h2>Book Your Service</h2>
+      <form id="bookingForm">
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Ashish Joshi"
+          required
+        />
+
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="joshi_ashish@yahoo.com"
+        />
+
+        <label for="phone">Phone Number:</label>
+        <div>
+          <input
+            type="tel"
+            id="country-code"
+            name="country-code"
+            placeholder="+91"
+            required
+            style="width: 60px"
+          />
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="999-999-9999"
+            required
+          />
+        </div>
+
+        <label for="serviceType">Select Service:</label>
+        <select id="serviceType" name="serviceType" required>
+          <option value="mobile">Mobile Device Repair</option>
+          <option value="tablet">Tablet Repair</option>
+          <option value="laptop">Laptop Repair</option>
+          <option value="accessory">Accessory Repair</option>
+        </select>
+        <label for="device">Device:</label>
+        <input
+          type="text"
+          id="device"
+          name="device"
+          placeholder="Mobile, Laptop"
+          required
+        />
+        <label for="deviceBrand">Device Brand:</label>
+        <input
+          type="text"
+          id="deviceBrand"
+          name="deviceBrand"
+          placeholder="Samsung, Apple.."
+          required
+        />
+        <label>Device Type:</label>
+        <div>
+          <input
+            type="radio"
+            id="automatic"
+            name="deviceType"
+            value="automatic"
+            required
+          />
+          <label for="automatic">Automatic</label>
+
+          <input
+            type="radio"
+            id="semi-automatic"
+            name="deviceType"
+            value="semi-automatic"
+            required
+          />
+          <label for="semi-automatic">Semi-Automatic</label>
+        </div>
+        <label for="appointmentDate">Appointment Date:</label>
+        <input
+          type="date"
+          id="appointmentDate"
+          name="appointmentDate"
+          required
+        />
+
+        <label for="address">Address:</label>
+        <textarea
+          id="address"
+          name="address"
+          rows="4"
+          placeholder="Enter your address"
+          required
+        ></textarea>
+
+        <br />
+        <button type="submit">Book Now</button>
+      </form>
+      <p id="confirmation"></p>
+    </section>
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2024 Ghar E Garage. All rights reserved.</p>
+      </div>
+    </footer>
+    <script>
+      const bookingForm = document.getElementById("bookingForm");
+      const confirmation = document.getElementById("confirmation");
+      bookingForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        confirmation.textContent =
+          "Booking successful! We will contact you soon.";
+        window.location.href = "booksuccess.html";
+      });
+    </script>
+  </body>
+</html>
